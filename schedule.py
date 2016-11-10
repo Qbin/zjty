@@ -6,10 +6,9 @@ from conf import db_config, dt_mappings
 
 
 class Scheduler(object):
-
-    def __init__(self, db_config, dt_mappings):
-        self.dt_mapping = dt_mappings
-        self.db_config = db_config
+    def __init__(self, config, mapping):
+        self.db_config = config
+        self.dt_mapping = mapping
 
     def schedule(self):
         self.insert()
@@ -25,9 +24,3 @@ class Scheduler(object):
 if __name__ == "__main__":
     S = Scheduler(db_config, dt_mappings)
     S.schedule()
-
-
-
-
-
-
